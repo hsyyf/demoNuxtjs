@@ -1,44 +1,44 @@
 <template>
+  <el-container style="height: 500px; border: 1px solid #eee">
+    <el-aside width="200px" style="background-color: rgb(238, 241, 246)">
+      <el-menu>
+        <el-menu-item v-on:click="clickMenu('1')" index="1">导航1</el-menu-item>
+      </el-menu>
+      <el-menu>
+        <el-menu-item v-on:click="clickMenu('2')" index="2">导航2</el-menu-item>
+      </el-menu>
+      <el-menu>
+        <el-menu-item v-on:click="clickMenu('3')" index="3">导航3</el-menu-item>
+      </el-menu>
 
-  <section class="container">
-    <div>
-      <app-logo/>
-      <h1 class="title">
-        demo
-      </h1>
-      <h2 class="subtitle">
-        Nuxt.js project
-      </h2>
-      <div class="links">
-        <a
-          href="https://nuxtjs.org/"
-          target="_blank"
-          class="button--green">Documentation</a>
-        <a
-          href="https://github.com/nuxt/nuxt.js"
-          target="_blank"
-          class="button--grey">GitHub</a>
-        <a
-          href="/"
-          v-on:click="logOut"
-          class="button--grey">登出</a>
-      </div>
-    </div>
-  </section>
+    </el-aside>
+    <el-container>
+      <el-header style="text-align: right; font-size: 12px">
+        <el-row>
+          <el-col :span="-1">
+            <span class="grid-content bg-purple" style="font-size: large">系统</span>
+          </el-col>
+          <el-col :span="23">
+            <span v-on:click="logOut" style="font-size: large"><i class="el-icon-setting"></i>退出</span>
+          </el-col>
+        </el-row>
+      </el-header>
+    </el-container>
+  </el-container>
+
+
 </template>
 
 <script>
-  import AppLogo from '~/components/AppLogo.vue'
-
   export default {
-    components: {
-      AppLogo,
-    },
 
     methods: {
       logOut: function () {
         this.$store.state.token = null
-        this.$router.push({path: "/"})
+        this.$router.push("/loginPage")
+      },
+      clickMenu: function (msg) {
+        alert(msg)
       }
     }
 
@@ -46,33 +46,15 @@
 </script>
 
 <style>
-  .container {
-    min-height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
+  .el-header {
+    background-color: #B3C0D1;
+    color: #333;
+    line-height: 60px;
   }
 
-  .title {
-    font-family: "Quicksand", "Source Sans Pro", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif; /* 1 */
-    display: block;
-    font-weight: 300;
-    font-size: 100px;
-    color: #35495e;
-    letter-spacing: 1px;
+  .el-aside {
+    color: #333;
   }
 
-  .subtitle {
-    font-weight: 300;
-    font-size: 42px;
-    color: #526488;
-    word-spacing: 5px;
-    padding-bottom: 15px;
-  }
-
-  .links {
-    padding-top: 15px;
-  }
 </style>
 
