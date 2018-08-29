@@ -38,7 +38,9 @@ export default {
       alert(token)
     },
     getStoreList: function () {
-      this.storeList = [{"id": 1, "name": "中文"}]
+      this.$store.state.token = localStorage.getItem("token")
+      alert(this.$store.state.token)
+      // this.storeList = [{"id": 1, "name": "中文"}]
       // this.http.get(
       //   "/store-list",
       // ).then(res => {

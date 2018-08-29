@@ -20,7 +20,6 @@
       </select>
       <button v-on:click="getStoreList">搜索</button>
       <input v-model="tempString" type="text"/>
-
       <br>
 
 

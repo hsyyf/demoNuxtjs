@@ -16,7 +16,8 @@
     "axios": "^0.18.0",
     "js-md5": "^0.7.3",
     "nuxt": "^1.0.0",
-    "vue": "latest"
+    "vue": "latest",
+    "vuex": "latest"
   },
   "devDependencies": {
     "babel-eslint": "^8.2.1",

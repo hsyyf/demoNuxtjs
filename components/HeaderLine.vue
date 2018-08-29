@@ -2,7 +2,7 @@
   <div id="header" class="top-line">
     <span> 测试同步</span>
     <br/>
-    <span id="token"></span>
+    <span id="token">{{$store.state.token}}</span>
   </div>
 </template>
 
