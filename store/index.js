@@ -5,7 +5,12 @@ Vue.use(Vuex)
 
 const store = () => new Vuex.Store(
   {
-    state: {token: null}
+    state: {token: null},
+    methods: {
+      add: function () {
+        alert("pass")
+      }
+    }
   }
 )
 
