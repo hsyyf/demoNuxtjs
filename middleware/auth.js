@@ -1,5 +1,8 @@
-export default function ({store, redirect}) {
-  if (!store.state.token) {
+export default function ({route, store, redirect}) {
+
+  let token = store.state.token
+
+  if (route.path !== "/loginPage" && !token) {
     return redirect('/loginPage')
   }
 }
