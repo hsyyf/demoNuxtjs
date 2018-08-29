@@ -20,8 +20,8 @@
           class="button--grey">GitHub</a>
         <a
           href="/"
-          target="_blank"
-          class="button--grey">Index</a>
+          v-on:click="logOut"
+          class="button--grey">登出</a>
       </div>
     </div>
   </section>
@@ -33,7 +33,15 @@
   export default {
     components: {
       AppLogo,
+    },
+
+    methods: {
+      logOut: function () {
+        this.$store.state.token = null
+        this.$router.push({path: "/"})
+      }
     }
+
   }
 </script>
 

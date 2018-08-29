@@ -1,15 +1,15 @@
 <template>
 
-  <section>
+  <section class="login-box">
     <header-line/>
 
     <div id="loginForm">
-      <input v-model="username" type="text" placeholder="username"/>
-      <input v-model="password" type="password" placeholder="password"/>
+      <input v-model="username" type="text" placeholder="username" class="el-input--medium"/>
+      <input v-model="password" type="password" placeholder="password" class="el-input--medium"/>
       <br>
-      <button v-on:click="loginPost">登录</button>
-      <button v-on:click="forgotPassword">忘记密码</button>
-      <button v-on:click="checkToken">获取token</button>
+      <button v-on:click="loginPost" class="el-button--danger">登录</button>
+      <button v-on:click="forgotPassword" class="el-button--success">忘记密码</button>
+      <el-button v-on:click="checkToken" type="primary">获取token</el-button>
 
       <br/>
       <select id="storeList">
@@ -34,5 +34,10 @@
 </script>
 
 <style scoped>
+
+  .login-box {
+    background: url("/static/loginbag.png");
+    cursor: cell;
+  }
 
 </style>

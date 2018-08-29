@@ -20,14 +20,20 @@ module.exports = {
   /*
   ** Build configuration
   */
+  router: {
+    middleware: 'auth'
+  },
 
-  plugins: [{src: '~/plugins/common.js', ssr: false}],
+  plugins: [{src: '~/plugins/common.js', ssr: false},
+    {src: "~/plugins/element-ui.js"}],
+
+  css: [{src: "element-ui/lib/theme-chalk/index.css"}],
 
   build: {
     /*
     ** Run ESLint on save
     */
-    vendor: ['axios', 'js-md5'],
+    vendor: ['axios', 'js-md5', 'element-ui'],
     extend(config, {isDev, isClient}) {
       if (isDev && isClient) {
         config.module.rules.push({
