@@ -1,9 +1,17 @@
 <template>
-  <div id="header" class="top-line">
-    <span> 测试同步</span>
-    <br/>
-    <span id="token">{{$store.state.token}}</span>
-  </div>
+  <el-container>
+    <el-header style="text-align: right; font-size: 12px">
+      <el-row>
+        <el-col :span="-1">
+          <span class="grid-content bg-purple" style="font-size: large">系统</span>
+        </el-col>
+        <el-col :span="23">
+          <span style="font-size: large" v-text="this.$store.state.token"></span>
+          <span style="font-size: large"><i class="el-icon-setting"></i>退出</span>
+        </el-col>
+      </el-row>
+    </el-header>
+  </el-container>
 </template>
 
 <style scoped>
