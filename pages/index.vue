@@ -63,16 +63,16 @@
         switch (parseInt(msg)) {
           case 1:
             this.$store.state.firstMenu += 1
-            this.tabView = MenuFirst;
+            this.tabView = MenuFirst
             break
           case 2:
             this.$store.state.secMenu += 1
-            this.tabView = MenuSec;
+            this.tabView = MenuSec
             break
           case 3:
             this.$store.state.firstMenu = 0
             this.$store.state.secMenu = 0
-            this.tabView = MenuFirst;
+            this.tabView = MenuFirst
             break
 
         }
