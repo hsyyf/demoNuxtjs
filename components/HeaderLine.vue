@@ -7,12 +7,30 @@
         </el-col>
         <el-col :span="23">
           <span style="font-size: large" v-text="this.$store.state.token"></span>
-          <span style="font-size: large"><i class="el-icon-setting"></i>退出</span>
+          <span style="font-size: large" v-on:click="logout"><i class="el-icon-setting"></i>退出</span>
         </el-col>
       </el-row>
     </el-header>
   </el-container>
 </template>
+
+
+<script>
+
+  export default {
+    data() {
+      return {}
+    },
+    name: "HeaderLine",
+    methods: {
+      logout: function () {
+        this.$store.state.token = null
+        this.$router.push({path: "/loginpage"})
+      }
+    }
+  }
+</script>
+
 
 <style scoped>
   .top-line {

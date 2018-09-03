@@ -1,5 +1,6 @@
 <template>
-  <h1> Second tab</h1>
+  <h1> Second tab {{this.$store.state.secMenu}}</h1>
+
 </template>
 
 <script>
